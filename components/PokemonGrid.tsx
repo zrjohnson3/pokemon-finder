@@ -26,6 +26,9 @@ export function PokemonGrid() {
             </div>
             <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
                 <PokemonCard name="Pikachu" />
+                <PokemonCard name="Pikachu" />
+                <PokemonCard name="Pikachu" />
+                <PokemonCard name="Pikachu" />
                 {/* <PokemonCard />
                 <PokemonCard /> */}
 

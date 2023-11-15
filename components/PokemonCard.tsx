@@ -1,4 +1,3 @@
-"use client"
 import Link from "next/link"
 
 // if at pikachu, --> point at localhost:3000/pikachu
@@ -12,7 +11,7 @@ export function PokemonCard({ name }: PokemonCardProps) {
     return (
         <Link
             href={name}
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors dark:border-grey-500 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors dark:border-gray-500 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             key={name + "Card"}
         >
             <h2 className={`text-2xl font-semibold`}>
