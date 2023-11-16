@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme.provider'
+import NavBar from '@/components/NavBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,10 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider attribute='class' defaultTheme='dark'>
-          <main className="flex min-h-screen flex-col items-center p-24">
-            <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+          <NavBar />
+          <main className="flex min-h-screen flex-col items-center p-12">
+            {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
               <h2 className='text-2xl text-bold'>Pokemon Finder</h2>
-            </div>
+            </div> */}
             {children}
           </main>
         </ThemeProvider>
