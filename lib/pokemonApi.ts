@@ -9,6 +9,23 @@ export async function getPokemonList() {
     const data = await response.json();
     return data.results;
 }
+// getPokemon -> given a string "pikachu", get the pokemon information
+export async function getPokemon(name: string) {
+    //pokemon/ditto
+    const response = await fetch(POKEMON_API_BASE + "pokemon/" + name);
+    const data = await response.json();
+    return data;
+}
+
+export async function getPokemonNames() {
+    try {
+        const pokemonList = await getPokemonList();
+        return pokemonList.map((pokemon: any) => pokemon.name);
+    } catch (error) {
+        console.error('Failed to fetch Pokemon list:', error);
+        return [];
+    }
+}
 
 
 // getPokemon -> given a string "pikachu", get the information of that pokemon
