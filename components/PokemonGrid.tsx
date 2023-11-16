@@ -4,8 +4,20 @@ import { Label } from "./ui/label"; //shadcn-ui components
 import { Input } from "./ui/input";
 import { PokemonCard } from "./PokemonCard";
 
-export function PokemonGrid() {
+// <PokemonGrid pokemonList={data} />
+interface PokemonGridProps {
+    // pokemonList: any;
+
+    pokemonList: [
+        name: string,
+        url: string
+    ];
+};
+
+export function PokemonGrid({ pokemonList }: PokemonGridProps) {
     const [searchText, setSearchText] = useState("");
+
+    console.log(pokemonList);
 
     return (
         <>

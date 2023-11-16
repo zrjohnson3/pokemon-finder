@@ -1,8 +1,15 @@
 import { PokemonCard } from '@/components/PokemonCard'
 import { PokemonGrid } from '@/components/PokemonGrid'
+import { getPokemonList } from '@/lib/pokemonApi'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+
+  // Load in data
+  const pokemonList = await getPokemonList();
+
+  // We can pass the data to a client component.
+
 
   // Text input: Filter the pokemon cards under it:
   // Text input -> "use client" we need to access to useState to handle the data
@@ -19,6 +26,6 @@ export default function Home() {
 
 
   return (
-    <PokemonGrid />
+    <PokemonGrid pokemonList={pokemonList} />
   )
 }
