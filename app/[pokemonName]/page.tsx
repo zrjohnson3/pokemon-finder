@@ -20,7 +20,7 @@ export default async function PokemonPage({ params }: { params: { pokemonName: s
         <>
             <Card className="m-2 p-4 border-yellow-300 border-8 bg-slate-600">
                 <CardHeader className="flex items-center justify-center border-b-4">
-                    <h1 className="text-4xl text-bold">{pokemonName}</h1>
+                    <h1 className="text-4xl text-bold">{pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)}</h1>
                     <div className="m-4" style={{ position: "relative", width: "300px", height: "300px" }}>
                         <PokemonImage
                             image={pokemonObject.sprites.other['official-artwork'].front_default} //pokemonObject.sprites.front_default
