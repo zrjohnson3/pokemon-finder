@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{ backgroundColor: "#172554" }}>
         <ThemeProvider attribute='class' defaultTheme='dark'>
           {/* <div className=' bg-blue-200'> */}
           <NavBar />

@@ -46,7 +46,7 @@ const NavBar = () => {
     const links = [
         {
             id: 0,
-            label: <div className="flex flex-row flex-wrap justify-between items-center"><CgPokemon className="w-6 h-6 text-red-500" />
+            label: <div className="flex flex-row flex-wrap justify-between items-center"><CgPokemon className="w-6 h-6 text-blue-500" />
                 <span>Pokemon Finder</span></div>,
             href: '/'
         },
@@ -70,9 +70,9 @@ const NavBar = () => {
                     links.map((link) => (
                         <Link key={link.id} href={link.href}
                             className={classNames({
-                                'text-red-600': link.href === currentPath,
-                                'text-red-500': link.href !== currentPath,
-                                'hover:text-red-800 transision-colors': true,
+                                'text-blue-600': link.href === currentPath,
+                                'text-blue-500': link.href !== currentPath,
+                                'hover:text-blue-800 transision-colors': true,
                             })}
                         >
                             {link.label}
