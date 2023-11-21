@@ -1,4 +1,4 @@
-import { PokemonCard } from '@/components/PokemonCard'
+import { PokemonTile } from '@/components/PokemonTile'
 import { PokemonGrid } from '@/components/PokemonGrid'
 import { getPokemonList } from '@/lib/pokemonApi'
 import Image from 'next/image'
@@ -11,10 +11,10 @@ export default async function Home() {
   // We can pass the data to a client component.
 
 
-  // Text input: Filter the pokemon cards under it:
+  // Text input: Filter the pokemon Tiles under it:
   // Text input -> "use client" we need to access to useState to handle the data
   // When the text is inputted -> filter through our current pokemon data.
-  // ("use client") PokemonGrid -> (Text input, showing all the cards that match the filter)
+  // ("use client") PokemonGrid -> (Text input, showing all the Tiles that match the filter)
 
   // We are going to get data for the 151 pokemon from a server component.
 

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Label } from "./ui/label"; //shadcn-ui components
 import { Input } from "./ui/input";
-import { PokemonCard } from "./PokemonCard";
+import { PokemonTile } from "./PokemonTile";
 
 // <PokemonGrid pokemonList={data} />
 interface PokemonGridProps {
@@ -49,15 +49,15 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
             <div className="mb-32 grid text-center items-center lg:max-w-4xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left md:grid-cols-3 md:max-w-xl sm:grid-cols-2">
                 {filteredPokemonList.map((pokemon: any) => {
                     return (
-                        <PokemonCard name={pokemon.name} />
+                        <PokemonTile name={pokemon.name} />
                     )
                 })}
-                {/* <PokemonCard name="Pikachu" />
-                <PokemonCard name="Pikachu" />
-                <PokemonCard name="Pikachu" />
-                <PokemonCard name="Pikachu" /> */}
-                {/* <PokemonCard />
-                <PokemonCard /> */}
+                {/* <PokemonTile name="Pikachu" />
+                <PokemonTile name="Pikachu" />
+                <PokemonTile name="Pikachu" />
+                <PokemonTile name="Pikachu" /> */}
+                {/* <PokemonTile />
+                <PokemonTile /> */}
 
             </div>
         </>

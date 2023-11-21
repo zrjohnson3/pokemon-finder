@@ -30,6 +30,7 @@ const NavBar = () => {
     const handleRandomPokemonClick = async (e: any) => {
         e.preventDefault();
         try {
+            console.log("Getting random pokemon")
             const newName = await getRandomPokemonName();
             setRandomPokemon(newName);
             router.push(`/${newName}`);
@@ -45,7 +46,7 @@ const NavBar = () => {
     const links = [
         {
             id: 0,
-            label: <div className="flex flex-row flex-wrap justify-between items-center"><CgPokemon className="w-6 h-6" />
+            label: <div className="flex flex-row flex-wrap justify-between items-center"><CgPokemon className="w-6 h-6 text-red-500" />
                 <span>Pokemon Finder</span></div>,
             href: '/'
         },
@@ -59,25 +60,27 @@ const NavBar = () => {
 
 
     return (
-        <nav className='flex space-x-6 border-b bg-yellow-400 mb-5 px-5 h-14 items-center'>
+        <nav className='flex space-x-6 border-b bg-amber-400 mb-5 px-5 h-14 items-center' >
             {/* <Link href={"/"} className="flex items-center ">
                 <CgPokemon className="w-6 h-6" />
                 <span className="flex-shrink-0">Pokemon Finder</span>
             </Link> */}
-            <ul className='flex space-x-6'>
-                {links.map((link) => (
-                    <Link key={link.id} href={link.href}
-                        className={classNames({
-                            'text-zinc-300': link.href === currentPath,
-                            'text-zinc-500': link.href !== currentPath,
-                            'hover:text-zinc-100 transision-colors': true,
-                        })}
-                    >
-                        {link.label}
-                    </Link>
-                ))}
-            </ul>
-        </nav>
+            < ul className='flex space-x-6' >
+                {
+                    links.map((link) => (
+                        <Link key={link.id} href={link.href}
+                            className={classNames({
+                                'text-red-600': link.href === currentPath,
+                                'text-red-500': link.href !== currentPath,
+                                'hover:text-red-800 transision-colors': true,
+                            })}
+                        >
+                            {link.label}
+                        </Link>
+                    ))
+                }
+            </ul >
+        </nav >
     )
 }
 

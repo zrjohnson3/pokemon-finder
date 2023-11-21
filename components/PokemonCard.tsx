@@ -1,23 +1,71 @@
-import Link from "next/link"
+"use client";
+import Image from "next/image";
+import { getPokemon } from "@/lib/pokemonApi";
+import { PokemonImage } from "@/components/PokemonImage";
+import { Progress } from "@/components/ui/progress";
+import { useEffect, useState } from "react";
+// pokemonName
 
-// if at pikachu, --> point at localhost:3000/pikachu
-// <PokemonCard name="pikachu" /> -->
+// pokemonName = "pikachu" --> show pikachu page with stats and image
 
-interface PokemonCardProps {
-    name: string;
-}
+export default function PokemonCard({ pokemonName }: { pokemonName: string }) {
 
-export function PokemonCard({ name }: PokemonCardProps) {
-    return (
-        <Link
-            href={name}
-            className="group rounded-lg border border-transparent m-2 px-5 py-4 transition-colors dark:border-gray-500 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            key={name + "Card"}
-        >
-            <h2 className={`text-2xl font-semibold`}>
-                {name.charAt(0).toUpperCase() + name.slice(1)}
-            </h2>
+    // useState to store the pokemonObject
+    const [pokemonObject, setPokemonObject] = useState<Pokemon | null>(null);
 
-        </Link>
-    )
+    useEffect(() => {
+        async function fetchPokemon() {
+            const data = await getPokemon(pokemonName);
+            setPokemonObject(data);
+        }
+        fetchPokemon();
+    }, [pokemonName])
+
+    // // Object destructuring to get the pokemonName from params
+    // const { pokemonName } = params;
+    // // pikachu --> Pikachu
+    // // get the API data from pikachu
+    // const pokemonObject = await getPokemon(pokemonName);
+    // console.log(pokemonObject);
+
+
+    if (!pokemonObject) {
+        return <div>Loading...</div>;
+    }
+    else {
+
+        return (
+            <>
+                <h1 className="text-4xl text-bold">{pokemonName}</h1>
+                <div className="m-4" style={{ position: "relative", width: "300px", height: "300px" }}>
+                    <PokemonImage
+                        image={pokemonObject.sprites.other['official-artwork'].front_default} //pokemonObject.sprites.front_default
+                        name={pokemonName}
+                    />
+                </div >
+                {/* <span><p>Weight: {pokemonObject.weight}</p> <p>Type: {pokemonObject.types[0].type.name}</p ></span > */}
+
+                <div className="flex justify-between p-2 m-3 w-full">
+                    <p>Weight: {pokemonObject.weight}</p>
+                    <p>Type: {pokemonObject.types[0].type.name}</p>
+                </div>
+                <br />
+
+                <div className="flex-col">
+                    {pokemonObject.stats.map((statObject: any) => {
+                        // Store the stats (name, base_stat, etc..) in statObject
+                        const statName = statObject.stat.name;
+                        const statValue = statObject.base_stat;
+                        return (
+                            <div className="flex items-stretch" style={{ width: "600px" }} key={statName}>
+                                <h3 className="p-3 w-2/4">{statName}: {statValue}</h3>
+                                <Progress value={statValue} />
+                            </div>
+                        )
+                    })}
+                </div>
+            </>
+        )
+
+    }
 }
