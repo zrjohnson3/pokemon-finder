@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Label } from "./ui/label"; //shadcn-ui components
 import { Input } from "./ui/input";
 import { PokemonTile } from "./PokemonTile";
+import { VscSearch } from "react-icons/vsc";
+import { PiMagnifyingGlassPlusBold } from "react-icons/pi";
 
 // <PokemonGrid pokemonList={data} />
 interface PokemonGridProps {
@@ -32,7 +34,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
     return (
         <>
             <div>
-                <h3 className="text-2xl py-6 text-center">Search For Your Pokemon!</h3>
+                <h3 className="text-2xl py-6 text-center inline-flex px-8"><PiMagnifyingGlassPlusBold /> Search For Your Pokemon!</h3>
                 <div className="grid w-full max-w-sm items-center gap-1.5">
                     <Label htmlFor="pokemonName">Enter Pokemon Name: </Label>
                     <Input
