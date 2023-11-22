@@ -34,7 +34,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
             <div>
                 <h3 className="text-2xl py-6 text-center">Search For Your Pokemon!</h3>
                 <div className="grid w-full max-w-sm items-center gap-1.5">
-                    <Label htmlFor="pokemonName">Pokemon Name</Label>
+                    <Label htmlFor="pokemonName">Enter Pokemon Name: </Label>
                     <Input
                         type="text"
                         value={searchText}
@@ -46,7 +46,7 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
                 </div>
                 <h3 className="text-3xl pt-12 pb-6 text-center">Pokemon Collection</h3>
             </div>
-            <div className="mb-32 grid text-center items-center lg:max-w-4xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left md:grid-cols-3 md:max-w-xl sm:grid-cols-2">
+            <div className="mb-32 grid text-center items-center lg:max-w-4xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left md:grid-cols-3 md:max-w-xl sm:grid-cols-2 border-b-2 border-t-2 border-black">
                 {filteredPokemonList.map((pokemon: any) => {
                     return (
                         <PokemonTile name={pokemon.name} />
