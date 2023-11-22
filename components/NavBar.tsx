@@ -60,7 +60,7 @@ const NavBar = () => {
 
 
     return (
-        <nav className='flex space-x-6 border-b bg-amber-400 mb-5 px-5 h-14 items-center' >
+        <nav className='flex space-x-6 border-b-2 border-black bg-amber-400 mb-5 px-5 h-14 items-center fixed w-full z-10' >
             {/* <Link href={"/"} className="flex items-center ">
                 <CgPokemon className="w-6 h-6" />
                 <span className="flex-shrink-0">Pokemon Finder</span>
