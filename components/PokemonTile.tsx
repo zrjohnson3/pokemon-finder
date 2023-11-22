@@ -11,7 +11,7 @@ export function PokemonTile({ name }: PokemonTileProps) {
     return (
         <Link
             href={name}
-            className="group rounded-lg border border-transparent m-2 px-5 py-4 transition-colors dark:border-gray-500 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border-2 border-transparent m-2 px-5 py-4 transition-colors dark:border-slate-200 hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             key={name + "Tile"}
         >
             <h2 className={`text-2xl font-semibold`}>
