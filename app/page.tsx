@@ -1,6 +1,6 @@
-import { PokemonTile } from '@/components/PokemonTile'
-import { PokemonGrid } from '@/components/PokemonGrid'
-import { getPokemonList } from '@/lib/pokemonApi'
+import { PokemonTile } from '@/app/components/PokemonTile'
+import { PokemonGrid } from '@/app/components/PokemonGrid'
+import { getPokemonList } from '@/app/lib/pokemonApi'
 import Image from 'next/image'
 
 export default async function Home() {

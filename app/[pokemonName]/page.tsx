@@ -1,9 +1,9 @@
 // Server Component
 import Image from "next/image";
-import { getPokemon } from "@/lib/pokemonApi";
-import { PokemonImage } from "@/components/PokemonImage";
-import { Progress } from "@/components/ui/progress";
-import { Card, CardHeader } from "@/components/ui/card";
+import { getPokemon } from "@/app/lib/pokemonApi";
+import { PokemonImage } from "@/app/components/PokemonImage";
+import { Progress } from "@/app/components/ui/progress";
+import { Card, CardHeader } from "@/app/components/ui/card";
 // pokemonName
 
 // pokemonName = "pikachu" --> show pikachu page with stats and image
