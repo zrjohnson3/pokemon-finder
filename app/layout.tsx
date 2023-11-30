@@ -28,7 +28,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='dark'>
           {/* <div className=' bg-blue-200'> */}
           <NavBar />
-          <main className="flex min-h-screen flex-col items-center p-12">
+          <main className="flex min-h-screen flex-col items-center  p-12">
             {children}
           </main>
           {/* </div> */}
